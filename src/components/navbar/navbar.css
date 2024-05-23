@@ -1,0 +1,37 @@
+.navBar {
+    background-color: #454851 ;
+    color: #f0eff4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 3rem;
+}
+.marca {
+    font-size: 2rem;
+}
+h1 a {
+    text-decoration: none;
+    color: #6cbeed;
+    font-weight: bold;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    background-color: rgba(53, 56, 63, 0.75);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+}
+ul a {
+    text-decoration: none;
+    color: white;
+}
+ul a:hover{
+    color: #73956f;
+}
+ul li:nth-child(2){
+    border-inline: 1px solid #73956f;
+    padding-inline: 2rem;
+}
+
