@@ -1,21 +1,14 @@
-// import { useState } from "react"
 import './navbar.css'
 import CartWidget from '../cartwidget/cartwidget'
 import { Link, NavLink } from 'react-router-dom'
 
-const NavBar = ( { handleCategoria } ) => {
-
-    // Antes de Routes
-    // esta es una forma de pasar prop a una funcion en el child
-    // const cambiarCategoria = (categoria) => {
-    //     handleCategoria(categoria)
-    // }
+const NavBar = ( ) => {
 
     return (
         <div className="navBar">
-            <h1 className='marca'>
-                <a href="">MARCA</a>
-            </h1>
+            <Link to={'/'} className='marca'>
+                <h1>MARCA</h1>
+            </Link>
             <ul>
                 <Link to={'/'} className='linkInicio'>
                     <li>Inicio</li>
@@ -28,12 +21,7 @@ const NavBar = ( { handleCategoria } ) => {
                 </NavLink>
                 <NavLink to={'/contacto'} className={ ({isActive}) => isActive? "navSelected" : "linkContacto" }>
                     <li>Contacto</li>
-                </NavLink>
-                {/* <li><a onClick={ ()=> cambiarCategoria('todos') } href="#">Inicio</a></li>
-                <li><a onClick={ ()=> cambiarCategoria('electronics') } href="#">Electronics</a></li>
-                <li><a onClick={ ()=> cambiarCategoria('jewelery') } href="#">Joyeria</a></li>
-                <li><a onClick={ ()=> cambiarCategoria('') } href="#">Contacto</a></li> */}
-                
+                </NavLink>                
             </ul>
             <div>
                 <CartWidget />
@@ -41,6 +29,7 @@ const NavBar = ( { handleCategoria } ) => {
         </div>
     )
 }
+
 export default NavBar
 
 

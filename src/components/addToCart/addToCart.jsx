@@ -14,10 +14,13 @@ const AddToCart = () => {
     }
 
     return (
-        <div className='addToCart'>
-            <button onClick={ resta } className='quitar'>-</button> 
-            <p className='cantidad'>{num}</p>
-            <button onClick={ suma } className='agregar'>+</button> 
+        <div className='addToCartContainer'>
+            <div className='addToCart'>
+                <button onClick={ resta } className='quitar'>-</button> 
+                <p className='cantidad'>{num}</p>
+                <button onClick={ suma } className='agregar'>+</button> 
+            </div>
+            <button className='alCarrito'>Agregar al carrito</button>
         </div>
     )
 }

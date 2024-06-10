@@ -1,5 +1,3 @@
-// Minuto 53 del afterClass
-
 import { useEffect, useState } from "react"
 import './itemDetailContainer.css'
 import { useParams } from 'react-router-dom'
@@ -11,7 +9,6 @@ const ItemDetailContainer = ( { idProducto } ) => {
     const { idItem } = useParams()
 
     useEffect ( () => {
-        // fetch(`https://fakestoreapi.com/products/${idProducto}`)
         fetch(`https://fakestoreapi.com/products/${idItem}`)
             .then( res => res.json() )
             .then( json => setProducto(json) )
@@ -20,7 +17,7 @@ const ItemDetailContainer = ( { idProducto } ) => {
 
     console.log(producto)
     return (
-        <div className='detailedProductDetails'>
+        <div className='containerProductDetails'>
             <div className="productDetails">
                 <img src={producto?.image} alt="" className="productDetailsImage"/>
                 <div className="productDetailsText">

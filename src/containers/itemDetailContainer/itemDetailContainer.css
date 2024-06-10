@@ -1,16 +1,10 @@
-.detailedProductDetails {    
+.containerProductDetails {    
     max-width: 900px;
-    margin: 2rem auto;
+    margin: 5rem auto;
     padding: 2rem;
-    background-color: #36827f;
     background-color: white;
+    border-radius: 1rem;
 }
-.detailedProductTitle {
-    margin: 0rem;
-    font-size: 2rem; 
-}
-
-
 
 .productDetails {
     display: flex;

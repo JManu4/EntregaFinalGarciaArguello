@@ -1,5 +1,9 @@
-.addToCart {
+.addToCartContainer {
     margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.addToCart {
     display: flex;
     width: 50%;
     align-items: center;
@@ -14,4 +18,14 @@
     text-align: center;
     margin: 0;
     font-size: 1.5rem;
+}
+
+.alCarrito {
+    background-color: #454851;
+    color: white;
+}
+.alCarrito:hover {
+    color: #2bd9fe;
+    background-color: #06184b;
+    
 }
