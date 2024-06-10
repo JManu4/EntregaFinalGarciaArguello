@@ -11,27 +11,34 @@
 }
 h1 a {
     text-decoration: none;
-    color: #6cbeed;
+    color: white;
     font-weight: bold;
 }
 ul {
     list-style-type: none;
     display: flex;
-    gap: 2rem;
+    /* gap: 2rem; */
     padding: 0;
     background-color: rgba(53, 56, 63, 0.75);
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     border-radius: 1rem;
+    
 }
-ul a {
-    text-decoration: none;
+ul li {
     color: white;
 }
-ul a:hover{
-    color: #73956f;
+ul li:hover {
+    color: #2bd9fe;
 }
-ul li:nth-child(2){
-    border-inline: 1px solid #73956f;
+
+.linkInicio, .linkElectronicos, .linkJoyeria, .linkContacto {
+    /* border-right:  1px solid #62ac5a; */
     padding-inline: 2rem;
 }
 
+
+.navSelected {
+    padding-inline: 2rem;
+    background-color: #62ac5a;
+    border-radius: 1rem;
+}
