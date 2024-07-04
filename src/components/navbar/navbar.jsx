@@ -13,19 +13,22 @@ const NavBar = ( ) => {
                 <Link to={'/'} className='linkInicio'>
                     <li>Inicio</li>
                 </Link>
-                <NavLink to={'/categoria/electronics'} className={ ({isActive}) => isActive? "navSelected" : "linkElectronicos" }>
-                    <li>Electronicos</li>
+                <NavLink to={'/categoria/ropa'} className={ ({isActive}) => isActive? "navSelected" : "linkElectronicos" }>
+                    <li>Ropa</li>
                 </NavLink>
-                <NavLink to={'/categoria/jewelery'} className={ ({isActive}) => isActive? "navSelected" : "linkJoyeria" }>
-                    <li>Joyeria</li>
+                <NavLink to={'/categoria/accesorios'} className={ ({isActive}) => isActive? "navSelected" : "linkJoyeria" }>
+                    <li>Accesorios</li>
                 </NavLink>
                 <NavLink to={'/contacto'} className={ ({isActive}) => isActive? "navSelected" : "linkContacto" }>
                     <li>Contacto</li>
                 </NavLink>                
             </ul>
-            <div>
+            <Link to={'/cart'}>
                 <CartWidget />
-            </div>
+            </Link>
+            {/* <div>
+                <CartWidget />
+            </div> */}
         </div>
     )
 }

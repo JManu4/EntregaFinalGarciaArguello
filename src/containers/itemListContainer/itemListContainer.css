@@ -19,6 +19,12 @@
     height: 10rem;
 }
 .botonDetails {
-    background-color: #454851;
+    background-color: rgb(69, 72, 81);
     color: white;
+    transition: all 0.3s ease 0s;
+}
+.botonDetails:hover {
+    box-shadow: 4px 4px 8px  rgba(0, 0, 0, 0.5);
+    border: none;
+    transform: translateY(-4px);
 }
