@@ -1,4 +1,4 @@
-# Proyecto de prueba - Curso React Comisión 57770
+# Proyecto de Ecommerce - Curso React Comisión 57770
 
 > Este es un proyecto realizado para el curso de React JS. Se trata de un ecommerce en el que podrás navegar por distintas categorías y adquirir tu orden de compra de los productos que has seleccionado.
 
@@ -49,11 +49,10 @@ Para que el proyecto se logre realizar de una manera esperada utilicé las sigui
 
 |    Campo      |   Tipo        |   Valor       |
 | ------------- | ------------- | ------------- |
-|   name        |   String      |   Nombre      |
-|   category    |   String      |   Categoría   |
-|       img     |   String      |       img     |
-|       name    |   String      |      Nombre   |
-| description   |   String      | Descripcion   |
-|       price   |   number      |     Precio    |
-|       stock   |   number      |       stock   |
+|   nombre      |   string      |   Nombre      |
+|   categoria   |   string      |   Categoría   |
+|   imagen      |   string      |   Imagen      |
+|   inventario  |   number      |   Inventario  |
+|   descripcion |   string      |   Descripcion |
+|   precio      |   number      |   Precio      |
 
