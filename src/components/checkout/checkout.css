@@ -1,5 +1,5 @@
 .CarritoDeCompra {
-    width: 1000px;
+    width: 80%;
     margin: 2rem auto;
     padding: 1rem;
     background-color: white;
@@ -13,7 +13,7 @@
 
 .CarritoDeCompraProducto {
     background-color: rgb(235, 235, 235);
-    padding: 1rem 0.5rem;
+    padding: 0rem 2rem;
     margin: 1rem;
     border-radius: 0.5rem;
     display: flex;
@@ -23,6 +23,7 @@
 
 .nameInCart{
     flex: 4;
+    
 }
 .quantityNpriceInCart{
     display: flex;
@@ -36,27 +37,21 @@
     border-radius: 0.5rem;
 }
 .priceInCart{
-color: rgb(0, 86, 0);
 font-weight: bold;
 }
 
 
-.comprar {
+.formYtotal {
     display: flex;
-    /* justify-content: right; */
     justify-content: space-between;
     gap: 1rem;
     margin: 2rem 1rem;
 }
-
 .formulario {
-    
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-
-
 .PrecioTotal {
     font-weight: bold;
     background-color: rgb(235, 235, 235);
@@ -64,18 +59,36 @@ font-weight: bold;
     align-self: self-start;
     padding: 1rem;
     border-radius: 0.5rem;
-    
-    
+    color: rgb(73, 73, 247);
 }
 .realizarPedidoBtn {
     background-color: #454851 ;
     color: white;
-    font-weight: bold;
     transition: all 0.3s ease 0s;
+    font
 }
 .realizarPedidoBtn:hover {
     box-shadow: 4px 4px 8px  rgba(0, 0, 0, 0.5);
     border: none;
     transform: translateY(-4px);
+    font-weight: bold;
+}
+.realizarPedidoBtn:focus{
+    outline: none;
 }
 
+
+
+.regresarInicio {
+    background-color: rgb(69, 72, 81);
+    color: white;
+    transition: all 0.3s ease 0s;
+}
+.regresarInicio:hover {
+    box-shadow: 4px 4px 8px  rgba(0, 0, 0, 0.5);
+    border: none;
+    transform: translateY(-4px);
+}
+.regresarInicio:focus{
+    outline: none;
+}

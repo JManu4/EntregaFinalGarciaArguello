@@ -1,8 +1,9 @@
 import { useContext, useState } from 'react'
-import './addToCart.css'
 import { ShopContext } from '../../contexts/shopContext'
+import './itemQuantitySelector.css'
 
-const AddToCart = ( { unProducto } ) => {
+
+const ItemQuantitySelector = ( { unProducto } ) => {
 
     const { addNewToCart, carrito, addSameToCart } = useContext(ShopContext)
 
@@ -15,6 +16,7 @@ const AddToCart = ( { unProducto } ) => {
     }
 
     // const [ sameProduct, setSameProduct ] = useState(false)
+    // Porque useState no funciona?
     var sameProduct = false
     const isSameProdAndAddToCart = () => {
         carrito.forEach( (item) => {
@@ -37,8 +39,8 @@ const AddToCart = ( { unProducto } ) => {
                 <p className='cantidad'>{num}</p>
                 <button onClick={ suma } className='agregar'>+</button> 
             </div>
-            <button className='alCarrito' onClick={ isSameProdAndAddToCart }>Agregar al carrito</button>
+            <button className='alCarritoBtn' onClick={ isSameProdAndAddToCart }>Agregar al carrito</button>
         </div>
     )
 }
-export default AddToCart
+export default ItemQuantitySelector

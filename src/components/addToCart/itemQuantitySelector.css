@@ -20,12 +20,20 @@
     font-size: 1.5rem;
 }
 
-.alCarrito {
-    background-color: #454851;
+.alCarritoBtn {
+    background-color: rgb(69, 72, 81);
     color: white;
+    transition: all 0.3s ease 0s;
 }
-.alCarrito:hover {
-    color: #2bd9fe;
-    background-color: #06184b;
-    
+.alCarritoBtn:hover {
+    box-shadow: 4px 4px 8px  rgba(0, 0, 0, 0.5);
+    border: none;
+    transform: translateY(-4px);
+}
+.alCarritoBtn:active{
+    background-color: white;
+    color: rgb(69, 72, 81);;
+}
+.alCarritoBtn:focus{
+    outline: none;
 }

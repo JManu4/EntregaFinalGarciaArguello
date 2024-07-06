@@ -18,6 +18,7 @@
 .productImage {
     height: 10rem;
 }
+
 .botonDetails {
     background-color: rgb(69, 72, 81);
     color: white;
@@ -27,4 +28,7 @@
     box-shadow: 4px 4px 8px  rgba(0, 0, 0, 0.5);
     border: none;
     transform: translateY(-4px);
+}
+.botonDetails:focus{
+    outline: none;
 }

@@ -5,6 +5,7 @@ import { DeleteOutlined } from '@ant-design/icons';
 import { Button, Form, Input, InputNumber, Modal } from 'antd';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../firebase/client';
+import { Link } from 'react-router-dom'
 
 const CheckOut = () => {
 
@@ -19,41 +20,31 @@ const CheckOut = () => {
             email: '${label} is not a valid email!',
             number: '${label} is not a valid number!',
         }
-    };
-    
+    }
     const onFinish = (inputValues) => {
-    // setCarrito([])
-        const orderData = {
-            ...inputValues,
-            items: carrito,
-            total: PrecioTotal
-        }
+        const orderData = { ...inputValues, items: carrito, total: PrecioTotal }
 
         const orderCollection = collection (db, 'orders')
         addDoc(orderCollection, orderData)
-            .then( ( {id} ) => setIdCompra(id) )
-            .catch( (error) => console.error(error) )
-
-
-        setIsModalOpen(true)
-
-
+            .then( ( {id} ) => {
+                setIdCompra(id) 
+                Modal.success({
+                    title: 'ID Orden Creada:',
+                    content: ( <p>{id ?? '-'} </p> )
+                })
+                setCarrito([])
+            })
+            .catch( (error) => {
+                Modal.error({
+                    title: 'This is an error message',
+                    content: ( <p>{error ?? '-'} </p> )
+                  });
+            })
     };
-
-
-    const [isModalOpen, setIsModalOpen] = useState(false)
-    // const showModal = () => setIsModalOpen(true)
-    const handleOk = () => { 
-        setIsModalOpen(false)
-        setCarrito([])
-    }
-    const handleCancel = () => { setIsModalOpen(false) }
-
 
     return (
         <div className='CarritoDeCompra'>
             <h1>Carrito De Compra</h1>
-
             {carrito.length > 0 ? ( 
                     <div className='CarritoDeCompraProductos'>
                         {carrito?.map( (itemInCart, index) =>  
@@ -66,7 +57,7 @@ const CheckOut = () => {
                                 </div>
                             </div>        
                         )}
-                        <div className='comprar'>
+                        <div className='formYtotal'>
                             <Form
                                 name="nest-messages"
                                 onFinish={onFinish}
@@ -83,20 +74,20 @@ const CheckOut = () => {
                                 <Form.Item name={['buyer', 'email']} label="Email" rules={[ { required: true, type: 'email'} ]}>
                                     <Input placeholder="juan@coder.com" />
                                 </Form.Item>
-                                <Button type="primary" htmlType="submit">
+                                <Button type="primary" htmlType="submit" className='realizarPedidoBtn'>
                                     Realizar Pedido
                                 </Button>
                             </Form>
                             <p className='PrecioTotal'>Total: $ {PrecioTotal}</p>
                         </div>
-
-                        <Modal title="Order enviada" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-                            <p> {idCompra ?? '-'} </p> 
-                        </Modal>
-
                     </div>
                 ) : (
-                    <h2>Su carrito de compra está vacío...</h2>
+                    <>
+                        <h2>Su carrito de compra está vacío...</h2>
+                        <Link to={`/`} >
+                            <button className='regresarInicio'>Regresar al Inicio</button>
+                        </Link>
+                    </>
                 )
             }
         </div>

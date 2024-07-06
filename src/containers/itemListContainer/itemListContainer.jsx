@@ -13,23 +13,6 @@ const ItemListContainer = ( ) => {
     const [ productos, setProductos ] = useState([])
     const [ loading, setLoading ] = useState(true)
 
-    // useEffect( () => {
-    //     setLoading(true)
-    //     if (!idCategoria) {
-    //         fetch('https://fakestoreapi.com/products')
-    //             .then( res => res.json() )
-    //             .then( json => setProductos(json) )
-    //             .catch( e => console.error(e) )
-    //             .finally ( () => setLoading(false)  )
-    //     } else {
-    //         fetch(`https://fakestoreapi.com/products/category/${idCategoria}`)
-    //             .then( res => res.json() )
-    //             .then( json => setProductos(json) )
-    //             .catch( e => console.error(e) )
-    //             .finally ( () => setLoading(false)  )
-    //     }
-    // }, [idCategoria] )
-
     useEffect( () => {
         setLoading(true)
         if (!idCategoria) {
@@ -45,7 +28,6 @@ const ItemListContainer = ( ) => {
         } else {
             const productPorCategoria = query (
                 collection (db, 'productos'),
-                // where ('categoria', '==', 'ropa')
                 where ('categoria', '==', `${idCategoria}` )
             )
             getDocs (productPorCategoria)
@@ -70,6 +52,14 @@ const ItemListContainer = ( ) => {
 
     return (
         <div className='ItemListContainer'>
+            {!idCategoria ? (
+                <div>
+                    <h1>Todos nuestros productos</h1>
+                    <h3>Bienvenid@</h3>
+                </div>
+                ) : (
+                    <h1>{idCategoria.toUpperCase()}</h1>
+                )}
             <ItemList todosLosProductos={productos} /> 
         </div>
     )

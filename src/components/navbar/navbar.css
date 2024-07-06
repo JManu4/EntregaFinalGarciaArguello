@@ -27,7 +27,7 @@ ul li:hover {
     color: #2bd9fe;
 }
 
-.linkInicio, .linkElectronicos, .linkJoyeria, .linkContacto {
+.linkInicio, .linkRopa, .linkAccesorios, .linkContacto {
     padding-inline: 2rem;
 }
 .navSelected {

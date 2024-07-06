@@ -4,7 +4,6 @@ export const ShopContext = createContext()
 
 const ShopComponentContext = ( { children } ) => {
 
-    // const [ cantidad, setCantidad ] = useState(0)
     const [ carrito, setCarrito ] = useState([])
     const addSameToCart = ( ) => {
         setCarrito( [ ...carrito] )          

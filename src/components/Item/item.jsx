@@ -12,7 +12,6 @@ const Item = ( {unProducto} ) => {
                 <button className='botonDetails'>Detalles</button>
             </Link>
         </div>
-
     )
 }
 export default Item
